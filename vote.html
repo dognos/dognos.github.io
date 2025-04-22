@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>가상 후보 투표</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function limitSelection(checkbox) {
+      const max = 3;
+      const checkedBoxes = document.querySelectorAll('input[type="checkbox"]:checked');
+      if (checkedBoxes.length > max) {
+        checkbox.checked = false;
+        alert("최대 3명까지만 선택할 수 있습니다.");
+      }
+    }
+
+    function submitVote() {
+      const selected = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+        .map(cb => cb.value);
+      if (selected.length === 0) {
+        alert("한 명 이상 선택해주세요.");
+        return;
+      }
+      alert("당신의 선택: " + selected.join(", ") + "\n(데이터는 저장되지 않습니다)");
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>기준에 부합하는 후보를 선택해주세요</h1>
+    <p>최대 3명까지 선택할 수 있습니다.</p>
+  </header>
+
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>후보</th><th>윤리</th><th>정직</th><th>청렴</th><th>혐오 없음</th>
+          <th>실행력</th><th>판단력</th><th>설득력</th><th>위기 대응</th><th>선택</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>A</td><td>92</td><td>90</td><td>88</td><td>85</td><td>70</td><td>72</td><td>68</td><td>75</td>
+            <td><input type="checkbox" value="A" onclick="limitSelection(this)" /></td></tr>
+        <tr><td>B</td><td>55</td><td>60</td><td>58</td><td>62</td><td>90</td><td>91</td><td>85</td><td>87</td>
+            <td><input type="checkbox" value="B" onclick="limitSelection(this)" /></td></tr>
+        <tr><td>C</td><td>78</td><td>80</td><td>75</td><td>79</td><td>82</td><td>84</td><td>79</td><td>81</td>
+            <td><input type="checkbox" value="C" onclick="limitSelection(this)" /></td></tr>
+        <tr><td>D</td><td>45</td><td>40</td><td>35</td><td>30</td><td>92</td><td>95</td><td>90</td><td>88</td>
+            <td><input type="checkbox" value="D" onclick="limitSelection(this)" /></td></tr>
+        <tr><td>E</td><td>88</td><td>85</td><td>82</td><td>87</td><td>65</td><td>70</td><td>73</td><td>68</td>
+            <td><input type="checkbox" value="E" onclick="limitSelection(this)" /></td></tr>
+        <tr><td>F</td><td>66</td><td>70</td><td>60</td><td>72</td><td>80</td><td>82</td><td>78</td><td>80</td>
+            <td><input type="checkbox" value="F" onclick="limitSelection(this)" /></td></tr>
+        <tr><td>G</td><td>93</td><td>91</td><td>95</td><td>96</td><td>50</td><td>48</td><td>42</td><td>45</td>
+            <td><input type="checkbox" value="G" onclick="limitSelection(this)" /></td></tr>
+        <tr><td>H</td><td>73</td><td>76</td><td>72</td><td>70</td><td>75</td><td>74</td><td>77</td><td>73</td>
+            <td><input type="checkbox" value="H" onclick="limitSelection(this)" /></td></tr>
+      </tbody>
+    </table>
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+      <button onclick="submitVote()">제출</button>
+    </div>
+
+    <p style="text-align: center; font-size: 0.9rem; margin-top: 1rem;">
+      ※ 이 페이지는 데이터를 저장하지 않으며, 결과도 기록되지 않습니다.<br />
+      기준 판단 훈련 및 공익적 시민 교육 목적으로 운영됩니다.
+    </p>
+  </main>
+
+  <footer>
+    <p style="text-align: center;">© 2025 우리들기준. 익명 판단 실험 페이지.</p>
+  </footer>
+</body>
+</html>
