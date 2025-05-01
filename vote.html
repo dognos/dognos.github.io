@@ -77,6 +77,19 @@
       font-size: 0.85rem;
       color: #555;
     }
+
+    nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #cce6ff;
+  text-decoration: underline;
+}
   </style>
   <script>
     function limitSelection(checkbox) {
@@ -100,17 +113,15 @@
   </script>
 </head>
 <body>
-  <header>
-    <h1>기준에 부합하는 후보를 선택해주세요</h1>
-    <p>최대 3명까지 선택할 수 있습니다.</p>
-    <br>
-    <p>
-      <a href="index.html">홈</a></li>
-      <a href="declaration.html">기준 선언</a></li>
-      <a href="participation.html">시민 참여</a></li>
-    </p>
- 
-  </header>
+<header>
+  <h1>기준에 부합하는 후보를 선택해주세요</h1>
+  <p>최대 3명까지 선택할 수 있습니다.</p>
+  <nav style="margin-top: 1rem;">
+    <a href="index.html">홈</a> |
+    <a href="declaration.html">기준 선언</a> |
+    <a href="participation.html">시민 참여</a>
+  </nav>
+</header>
 
   <main>
     <table>
