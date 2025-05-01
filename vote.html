@@ -79,17 +79,32 @@
     }
 
     nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 1rem;
-  font-weight: 500;
-  transition: color 0.3s;
-}
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
 
-nav a:hover {
-  color: #cce6ff;
-  text-decoration: underline;
-}
+    nav a:hover {
+      color: #cce6ff;
+      text-decoration: underline;
+    }
+
+    .score {
+      font-size: 0.85rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .score .ethics {
+      color: #d63384;
+      font-weight: bold;
+    }
+
+    .score .ability {
+      color: #1c7ed6;
+      font-weight: bold;
+    }
   </style>
   <script>
     function limitSelection(checkbox) {
@@ -123,46 +138,78 @@ nav a:hover {
   </nav>
 </header>
 
-  <main>
-    <table>
-      <thead>
-        <tr>
-          <th>후보</th><th>윤리</th><th>정직</th><th>청렴</th><th>혐오 없음</th>
-          <th>실행력</th><th>판단력</th><th>설득력</th><th>위기 대응</th><th>선택</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><th>A</th><td>92</td><td>90</td><td>88</td><td>85</td><td>70</td><td>72</td><td>68</td><td>75</td>
-            <td><input type="checkbox" value="A" onclick="limitSelection(this)" /></td></tr>
-        <tr><th>B</th><td>55</td><td>60</td><td>58</td><td>62</td><td>90</td><td>91</td><td>85</td><td>87</td>
-            <td><input type="checkbox" value="B" onclick="limitSelection(this)" /></td></tr>
-        <tr><th>C</th><td>78</td><td>80</td><td>75</td><td>79</td><td>82</td><td>84</td><td>79</td><td>81</td>
-            <td><input type="checkbox" value="C" onclick="limitSelection(this)" /></td></tr>
-        <tr><th>D</th><td>45</td><td>40</td><td>35</td><td>30</td><td>92</td><td>95</td><td>90</td><td>88</td>
-            <td><input type="checkbox" value="D" onclick="limitSelection(this)" /></td></tr>
-        <tr><th>E</th><td>88</td><td>85</td><td>82</td><td>87</td><td>65</td><td>70</td><td>73</td><td>68</td>
-            <td><input type="checkbox" value="E" onclick="limitSelection(this)" /></td></tr>
-        <tr><th>F</th><td>66</td><td>70</td><td>60</td><td>72</td><td>80</td><td>82</td><td>78</td><td>80</td>
-            <td><input type="checkbox" value="F" onclick="limitSelection(this)" /></td></tr>
-        <tr><th>G</th><td>93</td><td>91</td><td>95</td><td>96</td><td>50</td><td>48</td><td>42</td><td>45</td>
-            <td><input type="checkbox" value="G" onclick="limitSelection(this)" /></td></tr>
-        <tr><th>H</th><td>73</td><td>76</td><td>72</td><td>70</td><td>75</td><td>74</td><td>77</td><td>73</td>
-            <td><input type="checkbox" value="H" onclick="limitSelection(this)" /></td></tr>
-      </tbody>
-    </table>
+<main>
+  <table>
+    <thead>
+      <tr>
+        <th>후보</th><th>윤리</th><th>정직</th><th>청렴</th><th>혐오 없음</th>
+        <th>실행력</th><th>판단력</th><th>설득력</th><th>위기 대응</th><th>선택</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><th>A</th><td>92</td><td>90</td><td>88</td><td>85</td><td>70</td><td>72</td><td>68</td><td>75</td>
+        <td>
+          <div class="score"><span class="ethics">윤리: 355</span> / <span class="ability">능력: 285</span></div>
+          <input type="checkbox" value="A" onclick="limitSelection(this)" />
+        </td>
+      </tr>
+      <tr><th>B</th><td>55</td><td>60</td><td>58</td><td>62</td><td>90</td><td>91</td><td>85</td><td>87</td>
+        <td>
+          <div class="score"><span class="ethics">윤리: 235</span> / <span class="ability">능력: 353</span></div>
+          <input type="checkbox" value="B" onclick="limitSelection(this)" />
+        </td>
+      </tr>
+      <tr><th>C</th><td>78</td><td>80</td><td>75</td><td>79</td><td>82</td><td>84</td><td>79</td><td>81</td>
+        <td>
+          <div class="score"><span class="ethics">윤리: 312</span> / <span class="ability">능력: 326</span></div>
+          <input type="checkbox" value="C" onclick="limitSelection(this)" />
+        </td>
+      </tr>
+      <tr><th>D</th><td>45</td><td>40</td><td>35</td><td>30</td><td>92</td><td>95</td><td>90</td><td>88</td>
+        <td>
+          <div class="score"><span class="ethics">윤리: 150</span> / <span class="ability">능력: 365</span></div>
+          <input type="checkbox" value="D" onclick="limitSelection(this)" />
+        </td>
+      </tr>
+      <tr><th>E</th><td>88</td><td>85</td><td>82</td><td>87</td><td>65</td><td>70</td><td>73</td><td>68</td>
+        <td>
+          <div class="score"><span class="ethics">윤리: 342</span> / <span class="ability">능력: 276</span></div>
+          <input type="checkbox" value="E" onclick="limitSelection(this)" />
+        </td>
+      </tr>
+      <tr><th>F</th><td>66</td><td>70</td><td>60</td><td>72</td><td>80</td><td>82</td><td>78</td><td>80</td>
+        <td>
+          <div class="score"><span class="ethics">윤리: 268</span> / <span class="ability">능력: 320</span></div>
+          <input type="checkbox" value="F" onclick="limitSelection(this)" />
+        </td>
+      </tr>
+      <tr><th>G</th><td>93</td><td>91</td><td>95</td><td>96</td><td>50</td><td>48</td><td>42</td><td>45</td>
+        <td>
+          <div class="score"><span class="ethics">윤리: 375</span> / <span class="ability">능력: 185</span></div>
+          <input type="checkbox" value="G" onclick="limitSelection(this)" />
+        </td>
+      </tr>
+      <tr><th>H</th><td>73</td><td>76</td><td>72</td><td>70</td><td>75</td><td>74</td><td>77</td><td>73</td>
+        <td>
+          <div class="score"><span class="ethics">윤리: 291</span> / <span class="ability">능력: 299</span></div>
+          <input type="checkbox" value="H" onclick="limitSelection(this)" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-    <div style="text-align: center; margin-top: 2rem;">
-      <button onclick="submitVote()">제출</button>
-    </div>
+  <div style="text-align: center; margin-top: 2rem;">
+    <button onclick="submitVote()">제출</button>
+  </div>
 
-    <p class="note">
-      ※ 이 페이지는 데이터를 저장하지 않으며, 결과도 기록되지 않습니다.<br />
-      기준 판단 훈련 및 공익적 시민 교육 목적으로 운영됩니다.
-    </p>
-  </main>
+  <p class="note">
+    ※ 이 페이지는 데이터를 저장하지 않으며, 결과도 기록되지 않습니다.<br />
+    기준 판단 훈련 및 공익적 시민 교육 목적으로 운영됩니다.
+  </p>
+</main>
 
-  <footer>
-    <p>© 2025 우리들기준. 익명 판단 실험 페이지.</p>
-  </footer>
+<footer>
+  <p>© 2025 우리들기준. 익명 판단 실험 페이지.</p>
+</footer>
 </body>
 </html>
